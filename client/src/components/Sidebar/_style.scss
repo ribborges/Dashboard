@@ -1,0 +1,129 @@
+@import "../../style/abstract/var";
+
+.sidebar {
+    box-sizing: border-box;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    min-width: 250px;
+    width: 250px;
+    z-index: 100;
+
+    background-color: $dark-grey-color;
+
+    transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, min-width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    .sidebar-head {
+        display: flex;
+        position: relative;
+        align-items: center;
+        gap: 10px;
+        margin: 15px auto;
+
+        img {
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: $border-radius;
+        }
+
+        .sidebar-title {
+            font-size: 1.3em;
+
+            transition: font-size 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+
+        .toggle-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+
+            background-color: $primary-accent-color;
+
+            transition: 0.5s;
+
+            &:hover {
+                background-color: $secondary-accent-color;
+            }
+        }
+    }
+
+    .sidebar-menu {
+        padding: 10px;
+
+        ul {
+            .sidebar-menu-item {
+                height: 50px;
+                margin: 5px;
+                display: flex;
+                font-size: 1rem;
+
+                button {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    border-radius: $border-radius;
+
+                    text-decoration: none;
+
+                    color: $light-grey-color;
+
+                    transition: background-color 0.5s, font-size 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+                    &:hover {
+                        color: $light-color;
+                        background-color: $primary-accent-color;
+                    }
+                }
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 60px;
+                    font-size: 1.1rem;
+                }
+
+                &:active {
+                    button {
+                        background-color: $secondary-accent-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &.collapsed {
+        min-width: 88px;
+        width: 88px;
+
+        .sidebar-head {
+            .sidebar-title {
+                font-size: 0px;
+            }
+
+            .toggle-btn {
+                right: -30px;
+            }
+        }
+
+        .sidebar-menu {
+            ul {
+                .sidebar-menu-item {
+                    font-size: 0px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@import "../../style/abstract/var";
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px
+}
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

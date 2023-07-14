@@ -1,0 +1,55 @@
+@import '../../../style/abstract/var';
+
+.button {
+    color: $light-color;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $border-radius;
+    border: 2px solid $primary-accent-color;
+    padding: 10px;
+    margin: 5px;
+    transition: 1s;
+
+    img {
+        border-radius: $border-radius;
+    }
+
+    &:hover, &:focus {
+        background-color: $primary-accent-color;
+        box-shadow: 0 0 100px 0 rgba($light-color, 0.2);
+    }
+
+    &:disabled {
+        color: rgba($light-color, 0.2);
+        border: 2px solid rgba($primary-accent-color, 0.2);
+
+        &:hover, &:focus {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .button {
+        padding: 10px;
+        margin: 5px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .button {
+        color: $dark-color;
+
+        &:hover, &:focus {
+            color: $dark-color;
+        }
+
+        &:disabled {
+            color: rgba($dark-color, 0.2);
+            border: 2px solid rgba($primary-accent-color, 0.2);
+        }
+    }
+}

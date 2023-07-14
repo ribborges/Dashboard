@@ -1,0 +1,19 @@
+@import "../../style/abstract/var";
+
+.spacer {
+	display: block;
+	border-bottom: none;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: $light-grey-color;
+}
+
+.blankspace {
+	border-style: none;
+}
+
+@media (prefers-color-scheme: light) {
+	.spacer {
+		border-top-color: $dark-grey-color;
+	}
+}

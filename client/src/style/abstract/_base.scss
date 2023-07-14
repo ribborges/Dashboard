@@ -1,0 +1,93 @@
+html, body, #root, .app {
+    height: 100%;
+    width: 100%;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    // Color scheme
+    color: $light-color;
+    background-color: $dark-color;
+
+    // Font
+    font-family: $primary-font;
+    font-size: $primary-font-size;
+
+    // Scrollbar
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+a {
+    color: $primary-accent-color;
+    transition: 1s;
+
+    &:hover {
+        color: $secondary-accent-color;
+        text-shadow: 0 0 20px #ffffff82;
+        text-decoration: underline;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .flex-1 {
+        flex: 1;
+    }
+
+    .flex-2 {
+        flex: 2;
+    }
+
+    .flex-3 {
+        flex: 3;
+    }
+
+    .flex-4 {
+        flex: 4;
+    }
+
+    .flex-5 {
+        flex: 5;
+    }
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-center {
+    align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        // Color scheme
+        color: $dark-color;
+        background-color: $light-color;
+    }
+}

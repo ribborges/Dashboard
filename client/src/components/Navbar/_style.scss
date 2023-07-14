@@ -1,0 +1,54 @@
+@import "../../style/abstract/var";
+
+.navbar {
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    justify-content: space-between;
+
+    .menu {
+        display: flex;
+
+        .userid {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 5px;
+            padding: 8px;
+            border-radius: $border-radius;
+
+            transition: background-color 0.5s;
+
+            img {
+                border-radius: 60%;
+                width: 30px;
+                height: 30px;
+            }
+
+            .usertag {
+                h5 {
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 0.6rem;
+                }
+            }
+
+            &:hover {
+                background-color: $primary-accent-color;
+            }
+        }
+
+        button {
+            border-radius: 50%;
+            border: none;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

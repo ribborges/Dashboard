@@ -1,0 +1,26 @@
+@import "../../style/abstract/var";
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 5px;
+
+    .summary {
+        text-align: left;
+        font-size: 0.8rem;
+
+        color: $primary-accent-color;
+
+        transition: color 0.5s;
+
+        &:hover {
+            color: $secondary-accent-color;
+        }
+    }
+
+    .content {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
